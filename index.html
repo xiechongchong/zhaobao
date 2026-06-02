@@ -120,7 +120,7 @@
             flex: 1;
             overflow-y: auto;
         }
-        /* Tree View Styles */
+        /* Tree View s */
         .tree-node {
             display: block;
         }
@@ -215,7 +215,7 @@
             font-size: 16px;
         }
         
-        /* Detail View Styles */
+        /* Detail View s */
         .detail-header {
             display: flex;
             align-items: flex-start;
@@ -361,11 +361,11 @@
         }
         .policy-value {
             font-size: 14px;
-            color: #d9480f;
+            color: red;
             line-height: 1.6;
         }
 
-        /* Footer Styles */
+        /* Footer s */
         .footer {
             background: #fff;
             border-top: 1px solid var(--border-color);
@@ -403,6 +403,49 @@
         }
         .toast.show {
             opacity: 1;
+        }
+/* ----- 手机端适配 (Mobile Responsive) ----- */
+        @media screen and (max-width: 768px) {
+            .header {
+                padding: 0 15px;
+            }
+            .header h1 {
+                font-size: 16px; /* 缩小标题字体 */
+            }
+            .header h1 svg {
+                width: 18px;
+                height: 18px;
+            }
+            .search-box {
+                width: 130px; /* 缩小搜索框，防止把标题挤跑 */
+                margin-left: 10px;
+                padding-left: 30px;
+                font-size: 13px;
+            }
+            .main-body {
+                flex-direction: column; /* 手机上改为上下排列 */
+                padding: 10px;
+                gap: 10px;
+            }
+            .sidebar {
+                width: 100%;
+                height: 40vh; /* 左侧目录改为在上方，占据屏幕 40% 的高度 */
+                flex-shrink: 0;
+            }
+            .content-area {
+                width: 100%;
+                height: auto;
+                min-height: 50vh; /* 详情内容显示在下方 */
+            }
+            .info-grid {
+                grid-template-columns: 1fr; /* 小卡片从两列变成一列 */
+            }
+            .card {
+                padding: 15px; /* 减小卡片内边距 */
+            }
+            .detail-title {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
